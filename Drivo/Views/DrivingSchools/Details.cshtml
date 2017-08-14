@@ -1,0 +1,106 @@
+﻿@model Drivo.Models.DrivingSchool
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DrivingSchool</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Working_since)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Working_since)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasswordHash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.About)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.About)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Licences_training_for)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Licences_training_for)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cities_of_operation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cities_of_operation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicles_used)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicles_used)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DrivingSchoolId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

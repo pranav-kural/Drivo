@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Drivo.Models.DrivingSchool_Instructors>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DrivingSchool.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Instructor.Firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EditDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrivingSchool.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Instructor.Firstname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EditDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InstructorsDrivingSchoolId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InstructorsDrivingSchoolId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InstructorsDrivingSchoolId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -189,13 +191,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DrivingSchoolsController.cs" />
+    <Compile Include="Controllers\DrivingSchool_InstructorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstructorsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\DrivingSchool.cs" />
+    <Compile Include="Models\DrivingSchool_Instructors.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -258,9 +267,25 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Instructors\Create.cshtml" />
+    <Content Include="Views\Instructors\Delete.cshtml" />
+    <Content Include="Views\Instructors\Details.cshtml" />
+    <Content Include="Views\Instructors\Edit.cshtml" />
+    <Content Include="Views\Instructors\Index.cshtml" />
+    <Content Include="Views\DrivingSchools\Create.cshtml" />
+    <Content Include="Views\DrivingSchools\Delete.cshtml" />
+    <Content Include="Views\DrivingSchools\Details.cshtml" />
+    <Content Include="Views\DrivingSchools\Edit.cshtml" />
+    <Content Include="Views\DrivingSchools\Index.cshtml" />
+    <Content Include="Views\DrivingSchool_Instructors\Create.cshtml" />
+    <Content Include="Views\DrivingSchool_Instructors\Delete.cshtml" />
+    <Content Include="Views\DrivingSchool_Instructors\Details.cshtml" />
+    <Content Include="Views\DrivingSchool_Instructors\Edit.cshtml" />
+    <Content Include="Views\DrivingSchool_Instructors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="SQL_Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

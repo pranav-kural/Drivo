@@ -1,0 +1,50 @@
+﻿@model Drivo.Models.DrivingSchool_Instructors
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DrivingSchool_Instructors</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DrivingSchool.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrivingSchool.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instructor.Firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instructor.Firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InstructorsDrivingSchoolId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
