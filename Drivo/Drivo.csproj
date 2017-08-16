@@ -282,6 +282,7 @@
     <Content Include="Views\DrivingSchool_Instructors\Details.cshtml" />
     <Content Include="Views\DrivingSchool_Instructors\Edit.cshtml" />
     <Content Include="Views\DrivingSchool_Instructors\Index.cshtml" />
+    <Content Include="Views\Instructors\_InstructorsNavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
