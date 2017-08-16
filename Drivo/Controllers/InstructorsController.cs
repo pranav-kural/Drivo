@@ -115,6 +115,11 @@ namespace Drivo.Controllers
             return RedirectToAction("Index");
         }
 
+        public PartialViewResult InstructorsNavigation()
+        {
+            return PartialView("_InstructorsNavigation");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
