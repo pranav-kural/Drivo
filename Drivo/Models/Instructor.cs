@@ -12,16 +12,18 @@ namespace Drivo.Models
         {
             DrivingSchool_Instructors = new HashSet<DrivingSchool_Instructors>();
         }
-
+        
         [Key]
         [DatabaseGenerated(databaseGeneratedOption: DatabaseGeneratedOption.Identity)]
         public string InstructorId { get; set; }
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "First name")]
         public string Firstname { get; set; }
 
         [Required]
+        [Display(Name = "Last name")]
         [StringLength(50)]
         public string Lastname { get; set; }
 
@@ -87,7 +89,7 @@ namespace Drivo.Models
         public string Cities_of_operation { get; set; }
 
         [StringLength(500)]
-        [Display(Name = "Vehicles Used")]
+        [Display(Name = "Vehicle(s) you use for training")]
         public string Vehicles_used { get; set; }
 
         // Possible options for Gender property

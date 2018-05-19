@@ -4,102 +4,88 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="row" style="padding: 20px 0px">
+    <h2 style="display:inline-block; margin:0">Details of @Html.DisplayFor(model => model.Name) </h2>
+    <a href="/DrivingSchools/Edit/@Model.DrivingSchoolId" type="button" class="btn btn-info" style="float:right"><i class="fa fa-pencil" style="margin-right:2px"></i>Edit</a>
+</div>
 
 <div>
-    <h4>DrivingSchool</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    <div class="jumbotron" style="padding: 20px 30px; border-radius: 10px">
+        <h2><b>@Html.DisplayFor(model => model.Name)</b></h2>
+        <hr />
+        <p>@Html.DisplayFor(model => model.About)</p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>@Html.DisplayNameFor(model => model.Working_since)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                @{
+                    if (Model.PhoneNumber != null)
+                    {
+                        <th>Phone Number</th>
+                    }
+                }
+                <th>Number of Instuctors</th>
+                <th>@Html.DisplayNameFor(model => model.Licences_training_for)</th>
+                <th>@Html.DisplayNameFor(model => model.Province)</th>
+                <th>@Html.DisplayNameFor(model => model.Cities_of_operation)</th>
+                <th>@Html.DisplayNameFor(model => model.Vehicles_used)</th>
+                <th>@Html.DisplayNameFor(model => model.UserName)</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(model => model.Name)</td>
+                <td>@Html.DisplayFor(model => model.Working_since)</td>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+                @{
+                    if (Model.PhoneNumber != null)
+                    {
+                        <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+                    }
+                }
+                <td>@Html.DisplayFor(model => model.DrivingSchool_Instructors.Count)</td>
+                <td>@Html.DisplayFor(model => model.Licences_training_for)</td>
+                <td>@Html.DisplayFor(model => model.Province)</td>
+                <td>@Html.DisplayFor(model => model.Cities_of_operation)</td>
+                <td>@Html.DisplayFor(model => model.Vehicles_used)</td>
+                <td>@Html.DisplayFor(model => model.UserName)</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+    <div class="row" style="padding: 20px 0px">
+        <h4 class="panel-heading" style="display:inline-block; margin:0">List of Instructors in this Driving School:</h4>
+        <a href="/DrivingSchools/RemoveInstructor/@Model.DrivingSchoolId" type="button" class="btn btn-danger pull-right"><i class="fa fa-trash-o" aria-hidden="true" style="margin-right:2px"></i>Remove an Instructor</a>
+        <a href="/DrivingSchools/AddInstructor/@Model.DrivingSchoolId" type="button" class="btn btn-success pull-right" style="margin-right:10px"><i class="fa fa-plus" aria-hidden="true" style="margin-right:2px"></i>Add an Instructor</a>
+     </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Working_since)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Working_since)
-        </dd>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Province</th>
+                    <th>Working Since</th>
+                </tr>
+                @foreach (var item in ViewBag.Instructors)
+                {
+                    <tr>
+                        <td>@item.Firstname @item.Lastname</td>
+                        <td>@item.DOB.Date.ToString("D")</td>
+                        <td>@item.Province</td>
+                        <td>@item.Working_since.Date.ToString("D")</td>
+                    </tr>
+                }
+            </table>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PasswordHash)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PasswordHash)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.About)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.About)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Licences_training_for)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Licences_training_for)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Province)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Province)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cities_of_operation)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cities_of_operation)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Vehicles_used)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Vehicles_used)
-        </dd>
-
-    </dl>
-</div>
+    </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.DrivingSchoolId }) |
     @Html.ActionLink("Back to List", "Index")

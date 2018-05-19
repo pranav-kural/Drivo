@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Drivo</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -22,7 +23,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li id="home_tab">@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Instructors", "Index", "Instructors")</li>
                     <li>@Html.ActionLink("Driving Schools", "Index", "DrivingSchools")</li>
                     @*<li>@Html.ActionLink("About", "About", "Home")</li>
@@ -35,8 +36,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer class="navbar-fixed-bottom text-center" style="position:relative;font-family:Montserrat">
+            <p>Built with 💗 by <a href="https://github.com/Riya698">Riya Patel</a> & <a href="https://github.com/pranav-kural">Pranav Kural</a></p>
         </footer>
     </div>
 

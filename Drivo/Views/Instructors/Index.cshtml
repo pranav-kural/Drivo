@@ -4,120 +4,89 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="page-header">List of Instructors</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p style="padding-bottom:10px">
+    <a href="/Instructors/Create/" class="btn btn-primary" style="border-radius:3px">Register a new Instructor</a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Firstname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lastname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DOB)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Gender)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Driving_instructor_licence)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Working_since)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PasswordHash)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.About)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Licences_held)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Licences_training_for)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Province)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cities_of_operation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vehicles_used)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Firstname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lastname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DOB)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gender)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Driving_instructor_licence)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Working_since)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PasswordHash)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.About)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Licences_held)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Licences_training_for)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Province)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cities_of_operation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vehicles_used)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.InstructorId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.InstructorId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.InstructorId })
-        </td>
-    </tr>
+<div class="container">
+
+
+@foreach (var item in Model)
+{
+
+<div class="row">
+    <div class="col-xs-10">
+        
+            <div class="row">
+                <div class="hidden-xs col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img src="~/Content/Image/img_avatar3.png" alt="Instructor's profile picture'">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <h3 class="panel-title pull-left"></h3>
+
+                            <div class="list-group" style="padding-bottom:0">
+                                <div class="list-group-item">
+                                    <p class="list-group-item-text">Instructors Name</p>
+                                    <h4 class="list-group-item-heading instructor-card-name">@Html.DisplayFor(modelItem => item.Firstname) @Html.DisplayFor(modelItem => item.Lastname)</h4>
+                                    <a class="btn btn-primary pull-right" href="/Instructors/Edit/@item.InstructorId" style="margin-top:-19px">
+                                        <i class="fa fa-pencil" style="margin-right:2px"></i>
+                                        Edit
+                                    </a>
+                                    <a class="btn btn-success pull-right" href="/Instructors/Details/@item.InstructorId" style="margin-top:-19px;margin-right:15px">
+                                        <i class="fa fa-info" aria-hidden="true" style="margin-right:2px"></i>
+                                        Details
+                                    </a>
+                                </div>
+                                <div class="list-group-item">
+                                    <p class="list-group-item-text">Provides driving lessons for</p>
+                                    <h4 class="list-group-item-heading">@Html.DisplayFor(modelItem => item.Licences_training_for)</h4>
+                                </div>
+                                <div class="list-group-item">
+                                    <p class="list-group-item-text">@Html.DisplayFor(modelItem => item.About)</p>
+                                    <p class="list-group-item-text"><b>Province:</b> @Html.DisplayFor(modelItem => item.Province)</p>
+                                    <p class="list-group-item-text"><b>Cities:</b> @Html.DisplayFor(modelItem => item.Cities_of_operation)</p>
+                                </div>
+                                <div class="panel-footer" style="padding-bottom:0">
+                                    <p class="list-group-item-text pull-left" style="margin-top:10px;display:inline-block">
+                                        @{
+                                            if (item.Email != null)
+                                            {
+                                                <i class="fa fa-envelope-o" aria-hidden="true"></i> @Html.DisplayFor(modelItem => item.Email)
+                                            }
+
+                                            if (item.PhoneNumber != null)
+                                            {
+                                                if (item.Email != null)
+                                                {
+                                                    <span style="margin-right:3px;margin-left:3px"> | </span>
+                                                }
+                                                <i class="fa fa-phone" aria-hidden="true"></i> @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                            }
+                                        }
+                                    </p>
+                                    <a class="btn btn-danger pull-right" href="/Instructors/Delete/@item.InstructorId">
+                                        <i class="fa fa-trash-o" aria-hidden="true" style="margin-right:2px"></i>
+                                        Delete
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <hr />
 }
 
-</table>
+</div>

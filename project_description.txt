@@ -1,0 +1,35 @@
+Website: Drivo
+
+Azure Website link: http://drivoapp.azurewebsites.net/
+
+Description: An online search directory and listings website for finding driving instructors and driving schools around your location.
+
+Built By: Riya Patel (200335493) & Pranav Kural (200333253)
+
+Project criteria:
+
+1. Build an application that references at least 2 data tables.
+
+-> The project includes following primary tables: Instructors, DrivingSchools, DrivingSchool_Instructors
+
+2. 1 One-To-Many relationship between tables and 1 One-To-One relationship
+
+-> There is a One-To-Many relationship between the tables DrivingSchools and DrivingSchool_Instructors. Since one driving school can have many instructors, therefore there are several records of related instructors in DrivingSchool_Instructors table for each Driving School in the DrivingSchools table.
+
+There is a One-To-One relationship between the tables Instructors and DrivingSchool_Instructors. One Instructor appears only once in the Instructor table, and only one in the DrivingSchool_Instructors table as well, because an instructor can be affiliated with only one driving school at a time.
+
+3. Use jQuery to post client side requests and populate results on your page
+
+-> We used the jQuery to post client side request to load the in-site secondary navigation for the Instructor views.
+
+4. Enable/Disable areas of your application to logged in Users or Guests
+
+-> We used a custom built AuthenticationAttribute, as an annotation, to authenticate and authorize users for different actions in different controllers.
+
+5. Show use of integration with an external data source using Microsoft Azure
+Must be SQL Server hosted on Azure
+Enable Code-First Migrations to push your database updates to Azure
+
+6. Host your Web Application on Azure
+
+-> We are hosting are the application on Azure with a SQL database and SQL server, all in the same resource group. Code-First Migrations are enabled to push your database updates to Azure.

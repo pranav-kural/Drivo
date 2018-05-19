@@ -5,141 +5,104 @@
 }
 
 <h2>Delete</h2>
+<div id="instructors_navigation"></div>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Instructor</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Firstname)
-        </dt>
+    <div>
+        <hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.Firstname)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Lastname)
-        </dt>
+        <div class="row">
+            <div class="col-xs-10">
 
-        <dd>
-            @Html.DisplayFor(model => model.Lastname)
-        </dd>
+                <div class="row">
+                    <div class="hidden-xs col-md-3">
+                        <a href="#" class="thumbnail">
+                            <img src="~/Content/Image/img_avatar3.png" alt="Instructor's profile picture'">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-md-9">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title pull-left"></h3>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DOB)
-        </dt>
+                                <div class="list-group" style="padding-bottom:0">
+                                    <div class="list-group-item">
+                                        <p class="list-group-item-text">Instructors Name</p>
+                                        <h4 class="list-group-item-heading instructor-card-name">@Html.DisplayFor(model => model.Firstname) @Html.DisplayFor(model => model.Lastname)</h4>
+                                        <a class="btn btn-primary pull-right" href="/Instructors/Edit/@Model.InstructorId" style="margin-top:-19px">
+                                            <i class="fa fa-pencil" style="margin-right:2px"></i>
+                                            Edit
+                                        </a>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <p class="list-group-item-text">Provides driving lessons for</p>
+                                        <h4 class="list-group-item-heading">@Html.DisplayFor(model => model.Licences_training_for)</h4>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <p class="list-group-item-text">@Html.DisplayFor(model => model.About)</p>
+                                        <p class="list-group-item-text"><b>Province:</b> @Html.DisplayFor(model => model.Province)</p>
+                                        <p class="list-group-item-text"><b>Cities:</b> @Html.DisplayFor(model => model.Cities_of_operation)</p>
+                                    </div>
+                                    <div class="panel-footer" style="padding-bottom:0">
+                                        <p class="list-group-item-text pull-left" style="margin-top:10px;display:inline-block">
+                                            @{
+                                                if (Model.Email != null)
+                                                {
+                                                    <i class="fa fa-envelope-o" aria-hidden="true"></i> @Html.DisplayFor(model => model.Email)
+                                                }
 
-        <dd>
-            @Html.DisplayFor(model => model.DOB)
-        </dd>
+                                                if (Model.PhoneNumber != null)
+                                                {
+                                                    if (Model.Email != null)
+                                                    {
+                                                        <span style="margin-right:3px;margin-left:3px"> | </span>
+                                                    }
+                                                    <i class="fa fa-phone" aria-hidden="true"></i> @Html.DisplayFor(model => model.PhoneNumber)
+                                                }
+                                            }
+                                        </p>
+                                    </div>
+                                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Driving_instructor_licence)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Driving_instructor_licence)
-        </dd>
+        </div>
+        <hr />
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Working_since)
-        </dt>
+        <h3 class="page-header">Additional Details</h3>
 
-        <dd>
-            @Html.DisplayFor(model => model.Working_since)
-        </dd>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.DOB)</th>
+                    <th>Working Since</th>
+                    <th>@Html.DisplayNameFor(model => model.Licences_held)</th>
+                    <th>Gender</th>
+                    <th>@Html.DisplayNameFor(model => model.Driving_instructor_licence)</th>
+                    <th>@Html.DisplayNameFor(model => model.Vehicles_used)</th>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(model => model.DOB)</td>
+                    <td>@Html.DisplayFor(model => model.Working_since)</td>
+                    <td>@Html.DisplayFor(model => model.Licences_held)</td>
+                    <td>@Html.DisplayFor(model => model.Gender)</td>
+                    <td>@Html.DisplayFor(model => model.Driving_instructor_licence)</td>
+                    <td>@Html.DisplayFor(model => model.Vehicles_used)</td>
+                </tr>
+            </table>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PasswordHash)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PasswordHash)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.About)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.About)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Licences_held)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Licences_held)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Licences_training_for)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Licences_training_for)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Province)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Province)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cities_of_operation)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cities_of_operation)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Vehicles_used)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Vehicles_used)
-        </dd>
-
-    </dl>
+    </div>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
@@ -150,3 +113,15 @@
         </div>
     }
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+
+
+            $('#instructors_navigation').load('@Url.Action("InstructorsNavigation", "Instructors")');
+        })
+</script>   
+ }

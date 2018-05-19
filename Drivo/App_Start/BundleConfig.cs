@@ -24,7 +24,7 @@ namespace Drivo
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/cosmo-bootstrap.min.css",
+                      "~/Content/cosmo_theme_bootstrap.min.css",
                       "~/Content/site.css"));
         }
     }

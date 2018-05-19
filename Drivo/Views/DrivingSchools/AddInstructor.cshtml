@@ -1,0 +1,60 @@
+﻿@model Drivo.Models.DrivingSchool
+
+@{
+    ViewBag.Title = "AddInstructor";
+}
+
+<h2>Add a new Instructor</h2>
+
+@if (ViewBag.Instructors == null)
+{
+    <h2>Oops! There are no instructors available to be added.</h2>
+}
+else
+{
+
+
+
+    using (Html.BeginForm())
+    {
+
+
+
+        <div class="container">
+
+            <div class="form-group">
+                <input type="hidden" name="DrivingSchoolId" value="@Model.DrivingSchoolId" />
+            </div>
+
+            <div class="table-responsive form-group">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Select</th>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Province</th>
+                        <th>Working Since</th>
+                    </tr>
+                    @foreach (var item in ViewBag.Instructors)
+                    {
+                        <tr>
+                            <td><input type="checkbox" name="InstructorIds" id="InstructorIds" value="@item.InstructorId"></td>
+                            <td>@item.Firstname @item.Lastname</td>
+                            <td>@item.DOB.Date.ToString("D")</td>
+                            <td>@item.Province</td>
+                            <td>@item.Working_since.Date.ToString("D")</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+                
+            
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Add Instructor(s)" class="btn btn-default" />
+                    </div>
+            </div>
+        </div>
+    }
+}

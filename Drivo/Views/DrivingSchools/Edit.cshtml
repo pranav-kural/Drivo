@@ -14,6 +14,10 @@
     <div class="form-horizontal">
         <h4>DrivingSchool</h4>
         <hr />
+
+
+        <input type="hidden" name="DrivingSchoolId" value="@Model.DrivingSchoolId" />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.DrivingSchoolId)
 

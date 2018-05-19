@@ -27,3 +27,30 @@ textarea {
 .form-horizontal .control-label {
     text-align: left !important;
 }
+
+h4.list-group-item-heading.instructor-card-name {
+    display: inline-block;
+}
+
+a.navbar-brand {
+    background: #fff;
+    color: #2780c3 !important;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    letter-spacing:1px;
+}
+
+
+#drivo_left_tab {
+    left: 0;
+    position: absolute;
+    min-width: 110px;
+    background: #fff;
+    min-height: 100%;
+    z-index:-1 !important;
+}
+
+.navbar {
+    border: 0;
+}

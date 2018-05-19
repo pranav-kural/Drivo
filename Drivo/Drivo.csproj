@@ -196,6 +196,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstructorsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Custom_Annotations\AuthorizeUser.cs" />
+    <Compile Include="ExternalLibraries\PasswordStorage.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +214,10 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cosmo_theme_bootstrap.min.css" />
+    <Content Include="Content\Image\driving_schools_art.jpg" />
+    <Content Include="Content\Image\img_avatar3.png" />
+    <Content Include="Content\Image\maxresdefault.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -222,6 +228,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="README.md" />
+    <None Include="Properties\PublishProfiles\drivoapp - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -283,6 +290,8 @@
     <Content Include="Views\DrivingSchool_Instructors\Edit.cshtml" />
     <Content Include="Views\DrivingSchool_Instructors\Index.cshtml" />
     <Content Include="Views\Instructors\_InstructorsNavigation.cshtml" />
+    <Content Include="Views\DrivingSchools\AddInstructor.cshtml" />
+    <Content Include="Views\DrivingSchools\RemoveInstructor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
